@@ -5,7 +5,7 @@ from collections import OrderedDict
 st.title("🧪 Kalkulator Stoikiometri")
 st.write("Aplikasi untuk menyetarakan persamaan reaksi dan menghitung stoikiometri sederhana")
 
-# 1. Inisialisasi session_state agar data tidak hilang saat rerun
+# 1. Inisialisasi session_state
 if "disetarakan" not in st.session_state:
     st.session_state.disetarakan = False
     st.session_state.reac = None
@@ -45,7 +45,7 @@ if st.button("Setarakan Reaksi"):
             st.text(f"Detail error: {e}")
             st.session_state.disetarakan = False
 
-# 2. Tampilkan bagian stoikiometri di LUAR blok if button atas, gunakan session_state
+# 2. Stoikiometri
 if st.session_state.disetarakan:
     st.success("✅ Persamaan reaksi berhasil disetarakan!")
     st.code(st.session_state.hasil_reaksi)
